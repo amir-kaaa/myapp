@@ -5,7 +5,6 @@ import './index.css'
 import { BrowserRouter } from 'react-router-dom';
 
 let state = {
-
   arr1: {
     logo1: 'УИ ГА',
     logo2: 'УИ ГА им. Б.П.Бугаева',
@@ -14,7 +13,6 @@ let state = {
     posetitelyam: 'Посетителям',
     studentam: 'Студентам'
   },
-
   arr2: [
     'Новости',
     'Мероприятия',
@@ -22,9 +20,9 @@ let state = {
     'Наука',
     'Об УИ ГА'
   ],
-
   arr3: [],
 }
+
 const header = ReactDOM.createRoot(document.getElementById('header'));
 
 let addText = (text) => {
