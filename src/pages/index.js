@@ -1,0 +1,7 @@
+export { default as About} from './About' 
+export { default as Home } from './Home/Home' 
+export { default as Abiturientam } from './Abiturientam'
+export { default as Studentam } from './Studentam'
+export { default as Posetitelyam } from './Posetitelyam'
+export { default as Rabotnikam } from './Rabotnikam'
+export { default as NotFound } from './NotFound'

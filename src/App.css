@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    /* background: var(--color-bg); */
+    /* background: #ccc; */
+    display: flex;
+    flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+    color: unset;
+    text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#content {
+    width: 100%;
+    position: relative;
+    flex-direction: column;
+    /* background-image: url('./assets/hp2.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 50%;
+    background-position: center center; */
+    /* height: 100%; */
 }
 
-.App-link {
-  color: #61dafb;
+.nb.small {
+    background: #1d2b60;
+    transition: background-color .3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nb.big {
+    background: linear-gradient(0deg, rgba(0, 0, 0, .7), #000);
+    transition: background-color .3s ease;
+}
+
+.nb2.small {
+    background: #fff;
+    color: #000;
+    border-bottom: 1px solid #e6e6e6;
+    transition: box-shadow .09s ease;
+    transition: background-color .15s ease;
+    box-shadow: 0 0 10px rgb(0 0 0 / 15%), 0 3px 3px rgb(0 0 0 / 15%);
+}
+
+.nb2.big {
+    background: linear-gradient(0deg, rgba(0, 0, 0, .005), rgba(0, 0, 0, .7));
+    color: #fff;
+    transition: box-shadow .05s ease;
+    transition: background-color .15s ease;
+    text-shadow: rgb(0 0 0 / 60%) 0 1px 8px;
+    /* box-shadow: 0 0 0 rgb(0 0 0 / 1%), 0 0 3px rgb(0 0 0 / 8%); */
+}
+
+.gradient__bg {
+
+    /* ff 3.6+ */
+    background: -moz-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
+
+    /* safari 5.1+,chrome 10+ */
+    background: -webkit-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
+
+    /* opera 11.10+ */
+    background: -o-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
+
+    /* ie 10+ */
+    background: -ms-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
+
+    /* global 92%+ browsers support */
+    background: radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
+}
+
+.gradient__text {
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section__padding {
+    padding: 4rem 6rem;
+}
+
+.section__margin {
+    margin: 4rem 6rem;
 }
