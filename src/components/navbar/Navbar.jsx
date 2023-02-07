@@ -14,7 +14,11 @@ const Navbar = (props) => {
       setNavbar(false)
     }
   }
-  window.addEventListener('scroll', changeBackground);
+  // window.addEventListener('scroll', changeBackground);
+  React.useEffect(() => {
+    window.addEventListener('scroll', changeBackground);
+    return () => window.removeEventListener('scroll', changeBackground)
+  })
 
   return (
     <Nav className={nb ? 'nb small' : 'nb big'}>
