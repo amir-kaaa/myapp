@@ -5,10 +5,16 @@ import image from '../../assets/hp2.jpg'
 const Home = (props) => {
 
   let text = React.createRef();
+  
   let addingText = () => {
     let newText = text.current.value;
     props.addText(newText);
     text.current.value = '';
+  }
+
+  let addNewText = () => {
+    let newText = text.current.value
+    props.addNewText(newText)
   }
 
   return (
@@ -39,7 +45,7 @@ const Home = (props) => {
 
 
         <Text>
-          <Input ref={text}></Input>
+          <Input ref={text} value={props.state.addNewText} onChange={addNewText}/>
           <Button onClick={addingText}>Add Post</Button>
         </Text>
 
