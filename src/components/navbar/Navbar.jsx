@@ -2,10 +2,8 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-
 const Navbar = (props) => {
-
-  const [nb, setNavbar] = useState(false);
+  const [navbar, setNavbar] = useState(false);
   const changeBackground = () => {
     if (window.scrollY >= (window.innerHeight * 8 / 10)) {
       setNavbar(true)
@@ -14,14 +12,13 @@ const Navbar = (props) => {
       setNavbar(false)
     }
   }
-  // window.addEventListener('scroll', changeBackground);
   React.useEffect(() => {
     window.addEventListener('scroll', changeBackground);
     return () => window.removeEventListener('scroll', changeBackground)
   })
 
   return (
-    <Nav className={nb ? 'nb small' : 'nb big'}>
+    <Nav className={navbar ? 'nb small' : 'nb big'}>
       <Logo1 to='/'>{props.arr1.logo1}</Logo1>
       <Logo2 to='/'>{props.arr1.logo2}</Logo2>
 

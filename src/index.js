@@ -21,6 +21,12 @@ let state = {
     'Об УИ ГА'
   ],
   arr3: [],
+  arr4: ''
+}
+
+let addNewText = (text) => {
+  state.arr4 = text;
+  console.log(state.arr4)
 }
 
 const header = ReactDOM.createRoot(document.getElementById('header'));
@@ -31,10 +37,10 @@ let addText = (text) => {
   rerenderEntirePage(state);
 }
 
-export let rerenderEntirePage = (state) => {
+let rerenderEntirePage = (state) => {
   header.render(
     <BrowserRouter>
-      <App state={state} addText={addText} />
+      <App state={state} addText={addText} addNewText={addNewText}/>
     </BrowserRouter>
   )
 }
