@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const Navbar2 = (props) => {
-    let arr2 = props.arr2.map(item => <Item>{item}</Item>);
+    let arr2 = props.arr2.map(item => <Item key={item}>{item}</Item>);
 
     const [nb2, setNavbar] = useState(false);
     const changeBackground = () => {
