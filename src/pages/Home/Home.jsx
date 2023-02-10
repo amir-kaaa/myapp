@@ -1,20 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
 import image from '../../assets/hp2.jpg'
+import { addNewTextActonCreator } from '../../store'
+import { addTextActionCreator } from '../../store'
 
 const Home = (props) => {
 
   let text = React.createRef();
-  
+
   let addingText = () => {
     let newText = text.current.value;
-    props.addText(newText);
+    let action = addTextActionCreator(newText)
+    props.dispatch(action);
     text.current.value = '';
   }
 
   let addNewText = () => {
     let newText = text.current.value
-    props.addNewText(newText)
+    let action = addNewTextActonCreator(newText)
+    props.dispatch(action)
   }
 
   return (
@@ -45,7 +49,7 @@ const Home = (props) => {
 
 
         <Text>
-          <Input ref={text} value={props.state.addNewText} onChange={addNewText}/>
+          <Input ref={text} value={props.state.addNewText} onChange={addNewText} />
           <Button onClick={addingText}>Add Post</Button>
         </Text>
 

@@ -1,3 +1,6 @@
+const ADD_TEXT = 'ADD-TEXT'
+const ADD_NEW_TEXT = 'ADD-NEW-TEXT'
+
 let store = {
 
     state: {
@@ -19,21 +22,29 @@ let store = {
         arr3: [],
         arr4: '',
     },
-    addNewText(text) {
-        this.state.arr4 = text;
-        console.log(this.state.arr4)
-    },
     callSubscriber() {
         console.log('State is changed')
     },
-    addText(text) {
-        let newText = text;
-        this.state.arr3.push(newText);
-        this.callSubscriber(this.state)
-    },
     subscribe(observer) {
         this.callSubscriber = observer;
+    },
+    dispatch(action) {
+
+        switch (action.type) {
+            case ADD_TEXT:
+                let newText = action.text;
+                this.state.arr3.push(newText);
+                this.callSubscriber(this.state)
+                break
+            case ADD_NEW_TEXT:
+                this.state.arr4 = action.text;
+                break
+            default:
+        }
     }
 }
+
+export const addTextActionCreator = (newText) => ({ type: ADD_TEXT, text: newText })
+export const addNewTextActonCreator = (newText) => ({ type: ADD_NEW_TEXT, text: newText })
 
 export default store;
