@@ -8,7 +8,7 @@ const header = ReactDOM.createRoot(document.getElementById('header'));
 let rerenderEntirePage = (state) => {
   header.render(
     <BrowserRouter>
-      <App state={store.state} addText={store.addText.bind(store)} addNewText={store.addNewText.bind(store)} />
+      <App state={store.state} dispatch={store.dispatch.bind(store)} />
     </BrowserRouter>
   )
 }

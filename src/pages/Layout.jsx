@@ -5,8 +5,8 @@ import Header from '../containers/header/Header'
 const Layout = (props) => {
   return (
     <>
-      <Header state={props.state} addText={props.addText} />
-      <Outlet state={props.state} addText={props.addText} />
+      <Header state={props.state} dispatch={props.dispatch} />
+      <Outlet state={props.state} dispatch={props.dispatch} />
     </>
   )
 }
